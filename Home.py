@@ -16,7 +16,7 @@ st.markdown(
     If you don't have a .cif file for use with the CIF tools, you can download one for free from resources such as the [COD database](https://www.crystallography.net/cod/) or [Materials project](https://next-gen.materialsproject.org/).
     
     For improvements and suggestions, please feel free to message me [![Email Badge](https://img.shields.io/badge/email-leosdo@dtu.dk-078700ff?style=flat)](mailto:oliveira.leonardo@sljus.lu.se).  
-    You can also contribute by forking the repository on GitHub.  
+    You can also contribute by forking on GitHub the repository [![forks - Nanomax-tools](https://img.shields.io/github/forks/leosdo/Nanomax-tools?style=social)](https://github.com/leosdo/Nanomax-tools).  
     
     [![License: MIT](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c34_License-MIT-blue.svg)](/LICENSE)
 """

@@ -18,7 +18,7 @@ def plot_transmission(formula, density):
     fig, ax = plt.subplots(2, 1, figsize = (5,6))
     ax[0].plot(energy/1000, 1/mu, label = formula) #in microns
     ax[0].set_xlabel('Energy [keV]')
-    ax[0].set_ylabel(r'Attenuation lenth [$\mu$m]')
+    ax[0].set_ylabel(r'Attenuation length [$\mu$m]')
     ax[0].grid(linewidth = 0.4)
     ax[0].set_xlim(energy[0]/1000, energy[-1]/1000)
     ax[0].legend()
