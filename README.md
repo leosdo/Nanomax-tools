@@ -1,5 +1,5 @@
 # Nanomax tools
-This page present of number of tools for users/staff while conducting the experiments in NanoMAX.
+This page presents a number of tools for users/staff while conducting the experiments in NanoMAX.
 
 ## version 0.0.  - Nov24
 Capabilities introduced: 
