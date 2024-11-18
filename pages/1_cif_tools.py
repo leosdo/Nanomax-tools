@@ -1,5 +1,5 @@
 import streamlit as st
-from libraries import cif_tools
+from libs import cif_tools
 import numpy as np
 import matplotlib.pyplot as plt
 from tempfile import NamedTemporaryFile

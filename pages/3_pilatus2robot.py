@@ -1,5 +1,5 @@
 import streamlit as st
-from libraries import detectorswap
+from libs import detectorswap
 import numpy as np
 import matplotlib.pyplot as plt
 from tempfile import NamedTemporaryFile
