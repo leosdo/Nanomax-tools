@@ -1,6 +1,6 @@
 import streamlit as st
 from libs import xray_emissison
-
+from collections import OrderedDict
 
 st.title ("X ray emission lines")
 st.markdown(r"""
@@ -36,5 +36,6 @@ if submitted:
             atom_list.remove(i) 
             #atoms_list = ' '.join(atom_list).split()
     atom_list.extend(['Ar', 'O'])
-    fig = xray_emissison.plotxraylines(atom_list)
+
+    fig = xray_emissison.plotxraylines(list(OrderedDict.fromkeys(atom_list))) ##remove duplicates a preserver the order
     st.pyplot(fig)
