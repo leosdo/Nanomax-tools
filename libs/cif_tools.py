@@ -28,7 +28,7 @@ def plot_transmission(formula, density):
     transmission = np.empty((np.shape(energy_new)[0], np.shape(thickness)[0]))
     ###
     for i, j in enumerate(energy_new):
-        mu_energy_loop = material_mu('YMnO3', j, density = 5)*10**-7 #1/cm to 1/nm
+        mu_energy_loop = material_mu(formula, j, density = 5)*10**-7 #1/cm to 1/nm
         for k, l in enumerate(thickness):
             transmission[i,k] = 100*np.exp(-l*mu_energy_loop)
         ax[1].plot(thickness, (transmission[i,:]), label = j/1000)
