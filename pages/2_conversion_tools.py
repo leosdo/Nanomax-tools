@@ -1,8 +1,5 @@
 import streamlit as st
-from libs import conversions # form_values = {
-#      "energy": None}
-#st.subheader("keV to Å", divider=True)
-#import streamlit as st
+from libs import conversions 
 
 col_f1, col_f2 = st.columns(2)
 
@@ -48,7 +45,7 @@ if submitted:
     #st.write(r"$2\theta$ (deg):", select_tth)
     #st.write("The current number is ", number)
 
-st.subheader("Bragg @ energy", divider=True)
+#st.subheader("Bragg @ energy", divider=True)
 
 # st.subheader("what is d-spacing?", divider=True)
 # with st.form("form 4"):
