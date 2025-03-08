@@ -24,7 +24,7 @@ def plot_transmission(formula, density):
     ax[0].legend()
     ##
     energy_new = np.linspace(5000, 20000, 5)
-    thickness = np.linspace(1, 10000, 100) #nm
+    thickness = np.linspace(1, 1000000, 100000) #nm to mm
     transmission = np.empty((np.shape(energy_new)[0], np.shape(thickness)[0]))
     ###
     for i, j in enumerate(energy_new):
@@ -36,7 +36,7 @@ def plot_transmission(formula, density):
     ax[1].set_ylabel("Transmission [%]")
     ax[1].legend(title = "Energy [keV]", framealpha = 1)
     ax[1].grid(linewidth = 0.5, which = "both")
-    ax[1].set_xlim(1, 10000)
+    ax[1].set_xlim(1, 1000000)
     ax[1].set_xscale("log")
     ##
     fig.tight_layout()
