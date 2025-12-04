@@ -29,3 +29,4 @@ def plotxraylines(atom_list):
     ax[0].set_title("X-ray emission lines")
     plt.show()
     return fig
+

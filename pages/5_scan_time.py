@@ -5,15 +5,17 @@ col_f1, col_f2,  col_f2= st.columns(3)
 
 st.subheader("Estimate time for scan", divider=True)
 
-col_f1, col_f2, col_f3 = st.columns(3)
+col_f1, col_f2, col_f3, col_f4 = st.columns(4)
 with st.form(key="form_combined"):
     with col_f1:
-        npx = st.number_input("Number of steps along fast motor")
+        npx = st.number_input("Steps along fast motor")
     with col_f2:
-        npy = st.number_input("Number of steps along slow motor")
+        npy = st.number_input("Steps along slow motor")
     with col_f3:
-        exposure = st.number_input("exposure time")
-    hh_mm_ss, total_time = scan_time.estimate_time(npx, npy, exposure, 0.3)
+        exposure = st.number_input("Exposure time", min_value = 0.0001)
+    with col_f4:
+        repeat = st.number_input("Measurements", min_value = 1)
+    hh_mm_ss, total_time = scan_time.estimate_time(npx, npy, exposure, repeat, 0.3)
     #set now as 0.3.change it for new types of scan
     submitted = st.form_submit_button("Run", use_container_width = True)
     if submitted:
