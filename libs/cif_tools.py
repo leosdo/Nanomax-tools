@@ -1,6 +1,6 @@
 import Dans_Diffraction as dif
 import pandas as pd
-from xraydb import material_mu
+from xraydb import material_mu, xray_edges
 import matplotlib.pyplot as plt
 import numpy as np
 import re
@@ -19,9 +19,22 @@ def plot_transmission(formula, density):
     ax[0].plot(energy/1000, 1/mu, label = formula) #in microns
     ax[0].set_xlabel('Energy [keV]')
     ax[0].set_ylabel(r'Attenuation length [$\mu$m]')
-    ax[0].grid(linewidth = 0.4)
+    ax[0].grid(linewidth = 0.2)
     ax[0].set_xlim(energy[0]/1000, energy[-1]/1000)
-    ax[0].legend()
+    ax[0].set_ylim(0)
+    ax[0].minorticks_on()
+
+    elements = re.findall(r'[A-Z][a-z]*',formula)
+    
+    for el in elements:
+        edges = xray_edges(el)
+
+        for edge, info in edges.items():
+            en = info[0]/1000
+            if en >= energy[0]/1000 and en <=energy[-1]/1000:
+                ax[0].axvline(en, lw = 0.5, color = 'k') #, label = f'{el}_{edge} ({en})')
+                ax[0].annotate(f'{el}_{edge}', xy = (en, np.max(1/mu)- 2), fontsize = 7, rotation = 90)
+    ax[0].legend(fontsize = 8)
     ##
     energy_new = np.linspace(5000, 20000, 5)
     thickness = np.linspace(1, 1000000, 100000) #nm to mm
@@ -93,6 +106,3 @@ def xrdplot(xtl, form_values):
     ax.legend(frameon=False)
     ax.grid(linewidth = 0.4)    
     return fig, peak_table
-
-    
-    
